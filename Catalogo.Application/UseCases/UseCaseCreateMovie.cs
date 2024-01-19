@@ -16,22 +16,13 @@ namespace Catalogo.Application.UseCases
 
         public void Execute(RequestMovie request)
         {
-            ResponseMovie response = new()
-            {
-                Title = request.Title,
-                Duration = request.Duration,
-                Gender = request.Gender,
-                Url = request.Url
-            };
-
             Movie movie = new(
-                response.Title,
-                response.Duration,
-                response.Gender,
-                response.Url
+                request.Title,
+                request.Duration,
+                request.Gender,
+                request.Url
                 );
             _repository.Create(movie);
-
         }
     }
 }
