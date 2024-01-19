@@ -1,4 +1,8 @@
 
+using Catalogo.Application.Repository;
+using Catalogo.Application.UseCases;
+using Catalogo.Persistence;
+
 namespace CatalogoAPI
 {
     public class Program
@@ -13,6 +17,10 @@ namespace CatalogoAPI
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddSingleton<IRepositoty, RepositoryMock>();
+
+            builder.Services.AddScoped<IUseCaseCreateMovie, UseCaseCreateMovie>();
 
             var app = builder.Build();
 

@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Catalogo.Communication\Catalogo.Communication.csproj" />
+    <ProjectReference Include="..\Catalogo.Model\Catalogo.Model.csproj" />
+  </ItemGroup>
+
 </Project>
